@@ -25,7 +25,9 @@ const { data } = await useAsyncData("features", async () => {
     //     }, 1000);
     // });
 
-    const item = await useUser();
+    // const item = await useUser();
+
+    const item = await useFeaturedArticle();
 
     return item;
 });
