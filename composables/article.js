@@ -61,30 +61,10 @@ export const useFeaturedArticleId = () => {
 };
 
 export const useArticleById = (id, getItemById) => {
-    console.log(
-        "🚀 ~ file: article.js:65 ~ useArticleById ~ getItemById:",
-        getItemById
-    );
-    const fields = [
-        "title",
-        "date_created",
-        "id",
-        "slug",
-        "status",
-        "summary",
-        "user_created.first_name",
-        "user_created.last_name",
-        "user_created.avatar.id",
-        "cover.id",
-    ];
-
-    console.log("🚀 ~ file: article.js:64 ~ useArticleById ~ id:", id);
-
-    // const { $getItemById } = useNuxtApp();
-    // const { getItemById } = useDirectusItems();
+    const { getItemById } = useDirectusItems();
 
     return getItemById({
-        collection: "dp_articles",
+        collection: "xyz_articles",
         id,
         params: {
             fields,
