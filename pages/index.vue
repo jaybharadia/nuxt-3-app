@@ -5,13 +5,15 @@
 
         <!-- <Counter /> -->
 
+        <img :src="bannerImg" width="600" />
+
         <NuxtImgWrapper />
     </div>
 </template>
 
 <script setup>
 import { version } from "../package.json";
-
+import bannerImg from "../assets/images/bannerimg.jpg";
 const { data } = await useAsyncData("features", async () => {
     // const user = await new Promise((resolve) => {
     //     setTimeout(() => {
