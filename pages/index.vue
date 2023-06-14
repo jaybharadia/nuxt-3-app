@@ -1,5 +1,6 @@
 <template>
     <div>
+        Version {{ version }}
         <div>Inside Index PAGE</div>
 
         <!-- <Counter /> -->
@@ -9,6 +10,8 @@
 </template>
 
 <script setup>
+import { version } from "../package.json";
+
 const { data } = await useAsyncData("features", async () => {
     // const user = await new Promise((resolve) => {
     //     setTimeout(() => {
