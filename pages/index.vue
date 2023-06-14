@@ -2,7 +2,9 @@
     <div>
         <div>Inside Index PAGE</div>
 
-        <Counter />
+        <!-- <Counter /> -->
+
+        <NuxtImgWrapper />
     </div>
 </template>
 

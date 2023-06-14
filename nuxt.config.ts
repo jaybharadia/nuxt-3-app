@@ -10,6 +10,18 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
-
-  modules: ['@nuxtjs/tailwindcss']
+  image: {
+    // Nuxt Image Module config 
+    domains: ['products.7span.in'],
+    presets: {
+      avatar: {
+        modifiers: {
+          format: 'jpg',
+          width: 50,
+          height: 50
+        }
+      }
+    }
+  },
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge']
 })
