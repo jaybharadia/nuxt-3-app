@@ -13,6 +13,7 @@ export default defineNuxtConfig({
   image: {
     // Nuxt Image Module config 
     domains: ['products.7span.in'],
+    provider: 'ipx',
     presets: {
       avatar: {
         modifiers: {
