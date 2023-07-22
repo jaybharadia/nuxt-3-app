@@ -6,6 +6,8 @@
         <!-- <Counter /> -->
 
         <NuxtImgWrapper />
+
+        <Firebase />
     </div>
 </template>
 
