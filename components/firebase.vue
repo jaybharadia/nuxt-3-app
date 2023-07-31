@@ -15,7 +15,9 @@
 
         <!-- <Signup /> -->
 
-        <EmailLink />
+        <!-- <EmailLink /> -->
+
+        <SignInRandom />
 
         <!-- <button @click="signinPopup()">SignIn with Google</button> -->
 
