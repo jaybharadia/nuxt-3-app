@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+
+console.log('prcocess' , process.env.NODE_ENV );
 export default defineNuxtConfig({
   runtimeConfig:{
       OPEN_API_KEY : 'asdadaoadjij22',
