@@ -1,10 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  runtimeConfig:{
-      OPEN_API_KEY : 'asdadaoadjij22',
-      public:{
-          WEATHER_KEY : 'asdjiadij'
-      }
+  runtimeConfig: {
+    OPEN_API_KEY: 'asdadaoadjij22',
+    public: {
+      WEATHER_KEY: 'asdjiadij'
+    }
   },
 
   devtools: {
@@ -24,5 +24,5 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge']
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge'],
 })

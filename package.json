@@ -16,6 +16,7 @@
         "nuxt": "^3.5.2"
     },
     "dependencies": {
-        "@nuxt/image-edge": "^1.0.0-rc.1-28110023.6b8ab9c"
+        "@nuxt/image-edge": "^1.0.0-rc.1-28110023.6b8ab9c",
+        "@stripe/stripe-js": "^1.54.2"
     }
 }

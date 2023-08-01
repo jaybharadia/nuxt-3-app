@@ -6,6 +6,8 @@
         <!-- <Counter /> -->
 
         <NuxtImgWrapper />
+
+        <Stripe/>
     </div>
 </template>
 
