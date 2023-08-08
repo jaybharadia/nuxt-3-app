@@ -1,13 +1,7 @@
 <template>
     <div>
-        Version {{ version }}
-        <div>Inside Index PAGE</div>
-
-        <!-- <Counter /> -->
-
-        <NuxtImgWrapper />
-
-        <Firebase />
+        <Auth />
+        <!-- <Firebase /> -->
     </div>
 </template>
 

@@ -1,0 +1,135 @@
+<template>
+    <div>
+        <div
+            class="bg-purple-900 absolute top-0 left-0 bg-gradient-to-b from-gray-900 via-gray-900 to-purple-800 bottom-0 leading-5 h-full w-full overflow-hidden"
+        ></div>
+        <div
+            class="relative min-h-screen sm:flex sm:flex-row justify-center bg-transparent rounded-3xl shadow-xl"
+        >
+            <div
+                class="flex-col flex self-center lg:px-14 sm:max-w-4xl xl:max-w-md z-10"
+            >
+                <div class="self-start hidden lg:flex flex-col text-gray-300">
+                    <h1 class="my-3 font-semibold text-4xl">Welcome back</h1>
+                    <p class="pr-3 text-sm opacity-75">Firebase Auth Module</p>
+                </div>
+            </div>
+            <div class="flex justify-center self-center z-10">
+                <div class="p-12 bg-white mx-auto rounded-3xl w-96">
+                    <div class="mb-7">
+                        <h3 class="font-semibold text-2xl text-gray-800">
+                            Sign In
+                        </h3>
+                    </div>
+                    <div class="space-y-6">
+                        <div class="">
+                            <UInput
+                                placeholder="you@example.com"
+                                icon="i-heroicons-envelope"
+                                v-model="email"
+                            />
+                        </div>
+
+                        <UInput
+                            icon="i-heroicons-envelope"
+                            placeholder="*******"
+                            type="password"
+                            v-model="password"
+                        />
+
+                        <div class="flex items-center justify-between">
+                            <div class="text-sm ml-auto">
+                                <a
+                                    href="#"
+                                    class="text-purple-700 hover:text-purple-600"
+                                >
+                                    Forgot your password?
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <button
+                                type="submit"
+                                class="w-full flex justify-center bg-purple-800 hover:bg-purple-700 text-gray-100 p-3 rounded-lg tracking-wide font-semibold cursor-pointer transition ease-in duration-500"
+                            >
+                                Sign in
+                            </button>
+                        </div>
+                        <div
+                            class="flex items-center justify-center space-x-2 my-5"
+                        >
+                            <span class="h-px w-16 bg-gray-100"></span>
+                            <span class="text-gray-300 font-normal">or</span>
+                            <span class="h-px w-16 bg-gray-100"></span>
+                        </div>
+                        <div class="flex justify-center gap-5 w-full">
+                            <FbIcon name="i-uil-github" />
+                            <FbIcon name="i-uil-github" />
+                            <FbIcon name="i-uil-github" />
+                            <FbIcon name="i-uil-github" />
+                            <FbIcon name="i-uil-github" />
+                        </div>
+                    </div>
+                    <div class="mt-7 text-center text-gray-300 text-xs">
+                        <span>
+                            Copyright © 2021-2023
+                            <a
+                                href="https://codepen.io/uidesignhub"
+                                rel=""
+                                target="_blank"
+                                title="Codepen aji"
+                                class="text-purple-500 hover:text-purple-600"
+                                >AJI</a
+                            ></span
+                        >
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+        <footer class="bg-transparent absolute w-full bottom-0 left-0 z-30">
+            <div
+                class="container p-5 mx-auto flex items-center justify-between"
+            >
+                <div class="flex mr-auto">
+                    <a
+                        href="https://codepen.io/uidesignhub"
+                        target="_blank"
+                        title="codepen aji"
+                        class="text-center text-gray-700 focus:outline-none"
+                        ><img
+                            src="/images/firebase_logo.svg"
+                            alt="aji"
+                            class="object-contain mx-auto w-20 h-10"
+                        />
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+        <svg
+            class="absolute bottom-0 left-0"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1440 320"
+        >
+            <path
+                fill="#fff"
+                fill-opacity="1"
+                d="M0,0L40,42.7C80,85,160,171,240,197.3C320,224,400,192,480,154.7C560,117,640,75,720,74.7C800,75,880,117,960,154.7C1040,192,1120,224,1200,213.3C1280,203,1360,149,1400,122.7L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"
+            ></path>
+        </svg>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            email: "",
+            password: "",
+        };
+    },
+};
+</script>
+
+<style scoped></style>

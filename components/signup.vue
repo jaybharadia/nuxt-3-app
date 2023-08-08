@@ -5,7 +5,8 @@
                 placeholder="you@example.com"
                 icon="i-heroicons-envelope"
                 v-model="email"
-        /></UFormGroup>
+            />
+        </UFormGroup>
 
         <UFormGroup name="password" label="Password">
             <UInput
@@ -13,7 +14,8 @@
                 placeholder="*******"
                 type="password"
                 v-model="password"
-        /></UFormGroup>
+            />
+        </UFormGroup>
 
         <UButton label="Sign Up" color="gray" @click="signup">
             <template #trailing>

@@ -8,6 +8,9 @@ dependencies:
   '@firebase/app-types':
     specifier: ^0.9.0
     version: 0.9.0
+  '@iconify-json/uil':
+    specifier: ^1.1.5
+    version: 1.1.5
   '@nuxt/image-edge':
     specifier: ^1.0.0-rc.1-28110023.6b8ab9c
     version: 1.0.0-rc.1-28110023.6b8ab9c
@@ -2552,9 +2555,14 @@ packages:
       '@iconify/types': 2.0.0
     dev: true
 
+  /@iconify-json/uil@1.1.5:
+    resolution: {integrity: sha512-dp+tQ4fMGj0r1TAPc+9H3HADe70p7BVEktzIAUWH0lf9rZq++jHbjXFYtD3q4mVxBsFyrHwGFCoAiGGMK5G4ng==}
+    dependencies:
+      '@iconify/types': 2.0.0
+    dev: false
+
   /@iconify/types@2.0.0:
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
-    dev: true
 
   /@iconify/utils@2.1.7:
     resolution: {integrity: sha512-P8S3z/L1LcV4Qem9AoCfVAaTFGySEMzFEY4CHZLkfRj0Fv9LiR+AwjDgrDrzyI93U2L2mg9JHsbTJ52mF8suNw==}

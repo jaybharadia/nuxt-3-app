@@ -25,6 +25,8 @@
 
         <!-- <button @click="logout">Signout</button> -->
         <UButton @click="logout">Sign out</UButton>
+
+        <Github />
     </div>
 </template>
 
