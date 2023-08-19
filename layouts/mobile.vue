@@ -4,3 +4,10 @@
 
     <slot />
 </template>
+
+<script setup>
+onErrorCaptured(() => {
+    console.log("inside on Error composable ");
+    return false;
+});
+</script>

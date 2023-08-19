@@ -1,12 +1,27 @@
 <template>
-    <div>
-        Version {{ version }}
-        <div>Inside Index PAGE</div>
+    <NuxtErrorBoundary>
+        <!-- You use the default slot to render your content -->
+        <div>
+            Version {{ version }}
+            <div>Inside Index PAGE</div>
 
-        <!-- <Counter /> -->
+            <AddToCart>
+                <div v-for="_ in 10">
+                    <div>
+                        {{ data.items.cart[0].asda.asda }}
+                    </div>
+                </div>
+            </AddToCart>
 
-        <NuxtImgWrapper />
-    </div>
+            <!-- <Counter /> -->
+
+            <NuxtImgWrapper />
+        </div>
+        <template #error="{ error, clearError }">
+            You can display the error locally here: {{ error }}
+            <button @click="clearError">This will clear the error.</button>
+        </template>
+    </NuxtErrorBoundary>
 </template>
 
 <script setup>
