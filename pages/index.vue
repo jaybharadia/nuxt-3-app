@@ -1,36 +1,33 @@
 <template>
-    <div>
-        <Auth />
-        <!-- <Firebase /> -->
+    <div class="grid place-items-center h-screen bg-gray-50">
+        <div>
+            <UCard class="w-full lg:max-w-lg p-4 h-80 overflow-scroll">
+                <template #header>👤 User Details </template>
+
+                <template #default>
+                    <pre>
+                        {{ user }}
+                    </pre>
+                </template>
+
+                <template #footer />
+            </UCard>
+            <div class="text-center">
+                <UButton
+                    class="mt-4"
+                    color="danger"
+                    variant="outline"
+                    label="Logout"
+                    @click.native="signOut"
+                    size="lg"
+                    icon="i-uil-arrow-left"
+                />
+            </div>
+        </div>
     </div>
 </template>
 
 <script setup>
-import { version } from "../package.json";
-
-const { data } = await useAsyncData("features", async () => {
-    // const user = await new Promise((resolve) => {
-    //     setTimeout(() => {
-    //         resolve({
-    //             name: "jay",
-    //             age: 20,
-    //         });
-    //     }, 3000);
-    // });
-
-    // const item = await new Promise((resolve) => {
-    //     setTimeout(() => {
-    //         resolve({
-    //             item: "asdasidjasdij2993293",
-    //         });
-    //     }, 1000);
-    // });
-
-    const item = await useUser();
-
-    return item;
-});
-definePageMeta({
-    layout: "mobile",
-});
+const user = useCurrentUser();
+const { signOut } = useAuth();
 </script>
