@@ -42,5 +42,8 @@ export default defineNuxtConfig({
             measurementId: "G-F1XTG8XG4J",
             // there could be other properties depending on the project
         },
+        admin: {
+            serviceAccount: "./service-account.json",
+        },
     },
 });

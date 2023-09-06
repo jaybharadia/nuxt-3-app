@@ -29,5 +29,7 @@
 
 <script setup>
 const user = useCurrentUser();
+const router = useRouter();
+if (!user.value) router.push("/login");
 const { signOut } = useAuth();
 </script>
