@@ -5,7 +5,9 @@
                 <h3 class="font-semibold text-2xl text-gray-800">
                     Forgot Password
                 </h3>
-                <p>No worries.We will send you signin link in your email.</p>
+                <p class="text-xs text-gray-500">
+                    No worries. We will send you signin link in your email.
+                </p>
             </div>
             <div class="space-y-6">
                 <div class="">

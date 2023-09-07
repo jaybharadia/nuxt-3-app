@@ -1,8 +1,19 @@
 <template>
     <div class="grid place-items-center h-screen bg-gray-50">
         <div v-if="user">
-            <UCard class="w-full lg:max-w-lg p-4 h-80 overflow-scroll">
-                <template #header>👤 User Details </template>
+            <UCard class="max-w-lg p-4 h-80 overflow-scroll">
+                <template #header>
+                    <div class="flex items-center gap-2">
+                        <UAvatar
+                            :src="
+                                user.photoURL ||
+                                'https://avatars.githubusercontent.com/u/739984?v=4'
+                            "
+                            alt="Avatar"
+                        />
+                        <span>{{ user.displayName || "User Details" }} </span>
+                    </div>
+                </template>
 
                 <template #default>
                     <pre>
@@ -30,6 +41,6 @@
 <script setup>
 const user = useCurrentUser();
 const router = useRouter();
-if (!user || !user.value) router.push("/login");
+if (!user.value) router.push("/login");
 const { signOut } = useAuth();
 </script>

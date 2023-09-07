@@ -5,10 +5,10 @@
                 class="bg-purple-900 absolute top-0 left-0 bg-gradient-to-b from-gray-900 via-gray-900 to-purple-800 bottom-0 leading-5 h-full w-full overflow-hidden"
             ></div>
             <div
-                class="relative min-h-screen sm:flex sm:flex-row justify-center bg-transparent rounded-3xl shadow-xl"
+                class="relative min-h-screen flex sm:flex-row justify-center bg-transparent rounded-3xl shadow-xl"
             >
                 <div
-                    class="flex-col flex self-center lg:px-14 sm:max-w-4xl xl:max-w-md z-10"
+                    class="hidden flex-col sm:flex self-center lg:px-14 sm:max-w-4xl xl:max-w-md z-10"
                 >
                     <div
                         class="self-start hidden lg:flex flex-col text-gray-300"
@@ -29,18 +29,7 @@
                     class="container p-5 mx-auto flex items-center justify-between"
                 >
                     <div class="flex mr-auto">
-                        <a
-                            href="https://codepen.io/uidesignhub"
-                            target="_blank"
-                            title="codepen aji"
-                            class="text-center text-gray-700 focus:outline-none"
-                            ><img
-                                src="/images/firebase_logo.svg"
-                                alt="aji"
-                                class="object-contain mx-auto w-20 h-10"
-                            />
-                            Version {{ version }}
-                        </a>
+                        <span class="text-sm"> App v{{ version }} </span>
                     </div>
                 </div>
             </footer>
@@ -63,4 +52,7 @@
 
 <script setup>
 import { version } from "../package.json";
+
+const user = useCurrentUser();
+if (user.value) useRouter().push("/");
 </script>

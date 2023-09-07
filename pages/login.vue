@@ -5,7 +5,7 @@
                 <h3 class="font-semibold text-2xl text-gray-800">Sign In</h3>
             </div>
             <div class="space-y-6">
-                <div class="">
+                <div>
                     <UInput
                         placeholder="you@example.com"
                         icon="i-heroicons-envelope"
@@ -45,15 +45,21 @@
                 </div>
                 <Divider />
                 <div class="flex justify-center gap-5 w-full">
-                    <FbIcon class="cursor-pointer" name="i-uil-google" />
+                    <FbIcon
+                        class="cursor-pointer"
+                        name="i-uil-google"
+                        @click.native="google.signIn"
+                    />
                     <FbIcon
                         class="cursor-pointer"
                         name="i-uil-github"
                         @click.native="signInWithGithub()"
                     />
-                    <FbIcon class="cursor-pointer" name="i-uil-microsoft" />
-                    <FbIcon class="cursor-pointer" name="i-uil-twitter" />
-                    <FbIcon class="cursor-pointer" name="i-uil-apple" />
+                    <FbIcon
+                        class="cursor-pointer"
+                        name="i-uil-twitter"
+                        @click.native="twitter.signIn"
+                    />
                 </div>
 
                 <Divider />
@@ -64,19 +70,6 @@
                     color="gray"
                     @click.native="signInRandom"
                 />
-            </div>
-            <div class="mt-7 text-center text-gray-300 text-xs">
-                <span>
-                    Copyright © 2021-2023
-                    <a
-                        href="https://codepen.io/uidesignhub"
-                        rel=""
-                        target="_blank"
-                        title="Codepen aji"
-                        class="text-purple-500 hover:text-purple-600"
-                        >AJI</a
-                    ></span
-                >
             </div>
         </div>
     </div>
@@ -93,14 +86,18 @@ export default {
             signup,
             loading,
             github: { signIn: signInWithGithub },
+            google,
             signInRandom,
+            twitter,
         } = useAuth();
 
         return {
             signInWithGithub,
+            google,
             signup,
             loading,
             signInRandom,
+            twitter,
         };
     },
     data() {

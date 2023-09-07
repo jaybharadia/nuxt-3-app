@@ -5,6 +5,8 @@ import {
     createUserWithEmailAndPassword,
     signInAnonymously,
     sendSignInLinkToEmail,
+    GoogleAuthProvider,
+    TwitterAuthProvider,
 } from "firebase/auth";
 
 import { settings } from "~/constants";
@@ -106,9 +108,33 @@ export const useAuth = () => {
             .finally(() => (emailLinkLoading.value = false));
     };
 
+    const signInWithGoogle = () => {
+        const googleAuthProvider = new GoogleAuthProvider();
+        signInWithPopup(auth, googleAuthProvider)
+            .then(() => {
+                onSuccess();
+            })
+            .catch((error) => {
+                onError(error);
+            });
+    };
+
+    const signInWithTwitter = () => {
+        const provider = new TwitterAuthProvider();
+
+        signInWithPopup(auth, provider)
+            .then(() => onSuccess())
+            .catch((error) => onError(error));
+    };
     return {
         github: {
             signIn: signInWithGithub,
+        },
+        google: {
+            signIn: signInWithGoogle,
+        },
+        twitter: {
+            signIn: signInWithTwitter,
         },
         signOut: _signOut,
         signup,
