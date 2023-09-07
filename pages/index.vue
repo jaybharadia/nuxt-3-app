@@ -1,6 +1,6 @@
 <template>
     <div class="grid place-items-center h-screen bg-gray-50">
-        <div>
+        <div v-if="user">
             <UCard class="w-full lg:max-w-lg p-4 h-80 overflow-scroll">
                 <template #header>👤 User Details </template>
 
@@ -30,6 +30,6 @@
 <script setup>
 const user = useCurrentUser();
 const router = useRouter();
-if (!user.value) router.push("/login");
+if (!user || !user.value) router.push("/login");
 const { signOut } = useAuth();
 </script>
