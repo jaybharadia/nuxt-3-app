@@ -1,11 +1,6 @@
 <template>
-    <div>
-        Version {{ version }}
-        <div>Inside Index PAGE</div>
-
-        <!-- <Counter /> -->
-
-        <NuxtImgWrapper />
+    <div class="flex justify-center items-center h-screen">
+        <SquarePayment />
     </div>
 </template>
 

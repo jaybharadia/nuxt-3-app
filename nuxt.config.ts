@@ -1,5 +1,13 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app:{
+    head : {
+      script : [
+        // Square Web Payment SDK
+        { src: "https://sandbox.web.squarecdn.com/v1/square.js" },
+      ]
+    }
+  },
   runtimeConfig:{
       OPEN_API_KEY : 'asdadaoadjij22',
       public:{
