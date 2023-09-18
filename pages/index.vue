@@ -5,6 +5,8 @@
 
         <!-- <Counter /> -->
 
+        <Directus />
+
         <NuxtImgWrapper />
     </div>
 </template>
