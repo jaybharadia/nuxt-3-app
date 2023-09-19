@@ -21,9 +21,20 @@
 
 <script>
 let card;
-const APP_ID = "sandbox-sq0idb-t0toE5gpxVgNRLVI2sQc0Q";
-const LOCATION_ID = "LDAQFD80VDJMC";
+// const APP_ID = "sandbox-sq0idb-t0toE5gpxVgNRLVI2sQc0Q";
+// const LOCATION_ID = "LDAQFD80VDJMC";
 export default {
+    setup() {
+        const {
+            public: {
+                square: { locationId },
+            },
+        } = useRuntimeConfig();
+
+        return {
+            locationId,
+        };
+    },
     data() {
         return {
             isLoading: false,
@@ -43,14 +54,10 @@ export default {
                     "content-type": "application/json",
                 },
                 body: {
-                    locationId: LOCATION_ID,
+                    locationId: this.locationId,
                     sourceId: token,
                 },
             });
-            console.log(
-                "🚀 ~ file: SquarePayment.vue:50 ~ handlePaymentMethodSubmission ~ data:",
-                data
-            );
         },
         async tokenize() {
             try {
@@ -74,10 +81,8 @@ export default {
             }
         },
         async initCardPayment() {
-            if (!Square) {
-                throw new Error("Square.js failed to load properly");
-            }
-            const payments = Square.payments(APP_ID, LOCATION_ID);
+            const { payments } = useSquare();
+
             console.log(
                 "🚀 ~ file: SquarePayment.vue:13 ~ mounted ~ payments:",
                 payments

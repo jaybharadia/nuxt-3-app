@@ -11,7 +11,11 @@ export default defineNuxtConfig({
   runtimeConfig:{
       OPEN_API_KEY : 'asdadaoadjij22',
       public:{
-          WEATHER_KEY : 'asdjiadij'
+          WEATHER_KEY : 'asdjiadij',
+          square : {
+            appId : process.env.APP_ID,
+            locationId : process.env.LOCATION_ID 
+          }
       }
   },
 
