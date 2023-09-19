@@ -21,8 +21,7 @@
 
 <script>
 let card;
-// const APP_ID = "sandbox-sq0idb-t0toE5gpxVgNRLVI2sQc0Q";
-// const LOCATION_ID = "LDAQFD80VDJMC";
+import { tokenize } from "~/composables/useSquare";
 export default {
     setup() {
         const {
@@ -47,39 +46,28 @@ export default {
     },
     methods: {
         async handlePaymentMethodSubmission() {
-            const token = await this.tokenize();
-            const { data, error } = await useFetch("/api/pay", {
-                method: "POST",
-                headers: {
-                    "content-type": "application/json",
-                },
-                body: {
-                    locationId: this.locationId,
-                    sourceId: token,
-                },
-            });
-        },
-        async tokenize() {
             try {
-                const result = await card.tokenize();
-                if (result.status === "OK") {
-                    console.log(`Payment token is ${result.token}`);
-                    return result.token;
-                } else {
-                    let errorMessage = `Tokenization failed with status: ${result.status}`;
-                    if (result.errors) {
-                        errorMessage += ` and errors: ${JSON.stringify(
-                            result.errors
-                        )}`;
-                    }
+                const token = await tokenize(card);
 
-                    throw new Error(errorMessage);
-                }
-            } catch (e) {
-                console.error(e);
-                statusContainer.innerHTML = "Payment Failed";
-            }
+                const { data, error } = await useFetch("/api/pay", {
+                    method: "POST",
+                    headers: {
+                        "content-type": "application/json",
+                    },
+                    body: {
+                        locationId: this.locationId,
+                        sourceId: token,
+                    },
+                });
+                console.log(
+                    "🚀 ~ file: Card.vue:60 ~ handlePaymentMethodSubmission ~ data:",
+                    data
+                );
+
+                alert("Payment Success");
+            } catch {}
         },
+
         async initCardPayment() {
             const { payments } = useSquare();
 
