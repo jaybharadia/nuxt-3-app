@@ -16,6 +16,12 @@
         "nuxt": "^3.5.2"
     },
     "dependencies": {
-        "@nuxt/image-edge": "^1.0.0-rc.1-28110023.6b8ab9c"
+        "@apollo/client": "^3.8.4",
+        "@nuxt/image-edge": "^1.0.0-rc.1-28110023.6b8ab9c",
+        "@nuxtjs/apollo": "^5.0.0-alpha.6",
+        "@vue/apollo-components": "^4.0.0-beta.10",
+        "@vue/apollo-option": "^4.0.0-beta.9",
+        "graphql": "^16.8.1",
+        "graphql-tag": "^2.12.6"
     }
 }

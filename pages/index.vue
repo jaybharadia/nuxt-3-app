@@ -1,39 +1,43 @@
 <template>
     <div>
-        Version {{ version }}
-        <div>Inside Index PAGE</div>
+        <!-- <p>There are {{ data?.ships?.length || 0 }} ships.</p> -->
+        <!-- <pre>
 
-        <!-- <Counter /> -->
+            {{ data }}
+        </pre>
 
-        <NuxtImgWrapper />
+        <button @click="refresh">Refresh</button> -->
+
+        <ApolloQuery
+            ref="apolloQuery"
+            :query="query"
+            :variables="variables"
+            @result="loaded($event)"
+        >
+            <template #default="result">
+                {{ result }}
+            </template>
+        </ApolloQuery>
     </div>
 </template>
 
 <script setup>
-import { version } from "../package.json";
+const query = gql`
+    query company($gstNo: String!, $id: String!) {
+        company(gstNo: $gstNo, id: $id) {
+            availableCredit
+            gstNo
+            mobileNo
+        }
+    }
+`;
 
-const { data } = await useAsyncData("features", async () => {
-    // const user = await new Promise((resolve) => {
-    //     setTimeout(() => {
-    //         resolve({
-    //             name: "jay",
-    //             age: 20,
-    //         });
-    //     }, 3000);
-    // });
+const loaded = (data) => {
+    console.log("🚀 ~ file: index.vue:36 ~ loaded ~ data:", data);
+};
+const variables = { gstNo: "24AARFJ2195C1ZC", id: "63" };
+// const { data, refresh } = await useAsyncQuery(query, variables);
 
-    // const item = await new Promise((resolve) => {
-    //     setTimeout(() => {
-    //         resolve({
-    //             item: "asdasidjasdij2993293",
-    //         });
-    //     }, 1000);
-    // });
-
-    const item = await useUser();
-
-    return item;
-});
 definePageMeta({
     layout: "mobile",
 });
