@@ -10,6 +10,9 @@ export default defineNuxtConfig({
   devtools: {
     enabled: true
   },
+  directus: {
+    url : "http://0.0.0.0:8055"
+  },
   image: {
     // Nuxt Image Module config 
     domains: ['products.7span.in'],
@@ -24,5 +27,5 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge']
+  modules: ['@nuxtjs/tailwindcss', '@nuxt/image-edge', 'nuxt-live-editor', 'nuxt-directus', '@pinia/nuxt']
 })
