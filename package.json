@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "@nuxt/image-edge": "^1.0.0-rc.1-28110023.6b8ab9c",
-        "@vite-pwa/nuxt": "^0.1.1"
+        "@vite-pwa/nuxt": "^0.1.1",
+        "vue3-carousel-nuxt": "^1.1.0"
     }
 }

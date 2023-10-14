@@ -13,6 +13,7 @@ export default defineNuxtConfig({
     devtools: {
         enabled: true,
     },
+    css: ["~/assets/styles/index.css"],
     image: {
         // Nuxt Image Module config
         domains: ["products.7span.in"],
@@ -27,7 +28,12 @@ export default defineNuxtConfig({
             },
         },
     },
-    modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge", "@vite-pwa/nuxt"],
+    modules: [
+        "@nuxtjs/tailwindcss",
+        "@nuxt/image-edge",
+        "@vite-pwa/nuxt",
+        "vue3-carousel-nuxt",
+    ],
     pwa: {
         registerType: "autoUpdate",
         manifest: {

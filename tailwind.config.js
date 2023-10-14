@@ -3,6 +3,9 @@ module.exports = {
     content: [],
     theme: {
         extend: {
+            aspectRatio: {
+                "4/3": "4 / 3",
+            },
             colors: {
                 primary: {
                     100: "#CEEAFE",
