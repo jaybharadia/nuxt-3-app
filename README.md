@@ -1,5 +1,12 @@
 # Nuxt 3 Minimal Starter
 
+Nuxt 3 Tailwind Design Learning
+
+Favicon
+
+-   Svg cannot be loaded in Safari , therefore Using PNG
+-   png dimension must be perfect 32px x 32px or else it will stretch
+
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
 ## Setup
@@ -40,4 +47,5 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
 # nuxt-3-app
