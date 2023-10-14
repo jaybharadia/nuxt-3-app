@@ -4,4 +4,8 @@
     </div>
 </template>
 
-<script setup></script>
+<script>
+export default {
+    created() {},
+};
+</script>

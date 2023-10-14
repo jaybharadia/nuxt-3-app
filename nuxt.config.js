@@ -30,5 +30,13 @@ export default defineNuxtConfig({
             },
         },
     },
-    modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge"],
+    modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge", "@vite-pwa/nuxt"],
+    pwa: {
+        icon: {
+            source: "/favicon.png",
+        },
+        devOptions: {
+            enabled: true,
+        },
+    },
 });
