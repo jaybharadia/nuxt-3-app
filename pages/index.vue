@@ -12,13 +12,7 @@
 import { version } from "~/package.json";
 export default {
     version,
-    created() {
-        console.log("pwa", this.$pwa);
-
-        this.$pwa.install();
-    },
-    mounted() {
-        this.$pwa.install();
-    },
+    created() {},
+    mounted() {},
 };
 </script>
