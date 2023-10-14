@@ -3,6 +3,8 @@
         <img src="/favicon.png" width="32" />
 
         {{ $options.version }}
+
+        <VitePwaManifest />
     </div>
 </template>
 

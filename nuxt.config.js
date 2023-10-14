@@ -32,11 +32,17 @@ export default defineNuxtConfig({
     },
     modules: ["@nuxtjs/tailwindcss", "@nuxt/image-edge", "@vite-pwa/nuxt"],
     pwa: {
+        registerType: "autoUpdate",
+        manifest: {
+            name: "Trevenor",
+            short_name: "trevenor",
+            theme_color: "#0D6EFD",
+        },
         icon: {
             source: "/favicon.png",
         },
-        // devOptions: {
-        //     enabled: true,
-        // },
+        devOptions: {
+            enabled: true,
+        },
     },
 });
