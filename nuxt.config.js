@@ -35,8 +35,8 @@ export default defineNuxtConfig({
         icon: {
             source: "/favicon.png",
         },
-        devOptions: {
-            enabled: true,
-        },
+        // devOptions: {
+        //     enabled: true,
+        // },
     },
 });
