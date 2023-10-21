@@ -1,6 +1,11 @@
 <template>
-    <div class="h-screen flex flex-col justify-between">
-        <button @click="handleCarouselEnd">Skip</button>
+    <div class="h-screen flex flex-col justify-between relative">
+        <button
+            @click="handleCarouselEnd"
+            class="absolute right-5 top-5 z-10 mix-blend-overlay px-2 py-1"
+        >
+            Skip
+        </button>
         <carousel
             @slide-end="handleSlideEnd"
             :items-to-show="1"
@@ -14,9 +19,12 @@
                         class="aspect-4/3 grow rounded-3xl"
                     />
                     <div>
-                        <h2 class="text-3xl px-5 mb-5">{{ step.heading }}</h2>
+                        <h2
+                            class="text-3xl px-5 mb-5 font-display"
+                            v-html="step.heading"
+                        />
 
-                        <div class="text-gray-500 px-10 mb-5">
+                        <div class="text-gray-500 px-10 mb-5 font-gil">
                             {{ step.description }}
                         </div>
                     </div>
@@ -42,7 +50,8 @@ import { Carousel, Slide, Pagination } from "vue3-carousel";
 export default {
     steps: [
         {
-            heading: "Life is short and the world is wide",
+            heading:
+                "Life is short and the world is <span class='text-secondary-500 underlined'> wide </span>",
             description:
                 "At Friends tours and travel, we customize reliable and trutworthy educational tours to destinations all over the world",
             media: "/images/onboarding-1.png",
@@ -94,6 +103,28 @@ export default {
 </script>
 
 <style>
+.underlined {
+    position: relative;
+    margin-right: 1rem;
+}
+.underlined:after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 7px;
+    width: 100%;
+    border: solid 2px #cb1829;
+    border-color: #cb1829 transparent transparent transparent;
+    border-radius: 50%;
+}
+.small {
+    font-size: 60%;
+}
+.big {
+    font-size: 200%;
+}
+
 .onboarding .carousel__viewport {
     height: 90%;
 }
