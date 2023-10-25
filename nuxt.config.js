@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     app: {
         head: {
             link: [{ rel: "icon", type: "image/png", href: "/favicon.png" }],
+            link: [{ rel: "manifest", href: "/manifest.json" }],
         },
     },
 
@@ -43,9 +44,6 @@ export default defineNuxtConfig({
         },
         icon: {
             source: "/favicon.png",
-        },
-        devOptions: {
-            enabled: true,
         },
     },
 });

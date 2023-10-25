@@ -1,8 +1,12 @@
 <template>
+    <div>Version {{ $options.version }}</div>
     <OnboardingCarousel @end="$router.push('/login')" />
     <VitePwaManifest />
 </template>
 
 <script>
-export default {};
+import { version } from "~/package.json";
+export default {
+    version,
+};
 </script>

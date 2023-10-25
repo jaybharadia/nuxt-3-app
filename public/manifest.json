@@ -1,0 +1,10 @@
+{
+    "name": "Trevenor",
+    "short_name": "trevenor",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "lang": "en",
+    "scope": "/",
+    "theme_color": "#0D6EFD"
+}
